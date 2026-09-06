@@ -1,4 +1,5 @@
-"""Pranesh Majumder Tirtha | 2222899042
+"""Pranesh Majumder Tirtha
+Id: 2222899042
 Responsibilities from the planning document:
 - Accommodation and room calculation
 - Food and activity cost calculation

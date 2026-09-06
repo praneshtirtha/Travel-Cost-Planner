@@ -1,4 +1,5 @@
-"""Ananto Shariar | 2211431042
+"""Ananto Shariar 
+ID: 2211431042
 Responsibilities from the planning document:
 - Travel-option comparison
 - Cost-per-person calculation
