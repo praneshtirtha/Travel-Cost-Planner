@@ -1,7 +1,7 @@
 """Travel Cost Planner and Option Comparator
 CSE101 - Section 2 - Group 04
 
-main.py integration responsibility: Md. Nasim Taif
+main.py integration responsibility: Shared
 The program imports group-member functions through travel_utils.py.
 """
 
