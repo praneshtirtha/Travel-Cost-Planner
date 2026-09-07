@@ -27,7 +27,6 @@ from travel_utils import (
 
 FILE_NAME = "travel_plans.csv"
 
-
 def display_plan(plan, number=None):
     print("\n" + "=" * 60)
 

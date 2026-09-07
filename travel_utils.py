@@ -5,7 +5,7 @@ main.py imports reusable functions from travel_utils.py, while the actual functi
 are separated by group-member responsibility for easier demonstration.
 """
 
-from member_nasim import (
+from inputValidation_transport_manager import (
     calculate_transport_cost,
     get_non_empty_text,
     get_positive_integer,
@@ -15,7 +15,7 @@ from member_nasim import (
     get_comfort_rating,
 )
 
-from member_pranesh import (
+from budget_accommodation_manager import (
     calculate_accommodation_cost,
     calculate_food_cost,
     calculate_activity_cost,
@@ -24,7 +24,7 @@ from member_pranesh import (
     check_budget,
 )
 
-from member_ananto import (
+from travel_analysis_data_manager import (
     calculate_cost_per_person,
     compare_options,
     save_plan,
