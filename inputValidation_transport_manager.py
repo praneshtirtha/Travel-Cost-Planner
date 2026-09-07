@@ -9,6 +9,9 @@ Responsibilities from the planning document:
 """
 
 
+import math
+
+
 def get_non_empty_text(prompt):
     """Return a non-empty text value."""
     while True:
@@ -47,9 +50,9 @@ def get_non_negative_float(prompt):
     while True:
         try:
             value = float(input(prompt))
-            if value >= 0:
+            if math.isfinite(value) and value >= 0:
                 return value
-            print("The value cannot be negative. Please try again.")
+            print("Please enter a finite number that is 0 or greater.")
         except ValueError:
             print("Invalid input. Please enter a valid number.")
 
@@ -59,9 +62,9 @@ def get_positive_float(prompt):
     while True:
         try:
             value = float(input(prompt))
-            if value > 0:
+            if math.isfinite(value) and value > 0:
                 return value
-            print("Please enter a number greater than 0.")
+            print("Please enter a finite number greater than 0.")
         except ValueError:
             print("Invalid input. Please enter a valid number.")
 
@@ -78,6 +81,9 @@ def get_comfort_rating():
             print("Invalid input. Please enter a whole number from 1 to 5.")
 
 
-def calculate_transport_cost(fixed_cost, per_person, travellers):
-    """Calculate the total transport expense."""
-    return fixed_cost + (per_person * travellers)
+def calculate_transport_cost(transport_cost):
+    """Validate and return the entered total transport expense for the group."""
+    transport_cost = float(transport_cost)
+    if not math.isfinite(transport_cost) or transport_cost < 0:
+        raise ValueError("Transport cost must be a finite number that is 0 or greater.")
+    return transport_cost

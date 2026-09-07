@@ -86,11 +86,8 @@ def create_travel_option():
     travellers = get_positive_integer("Number of travellers: ")
     transport_type = get_non_empty_text("Transport type: ")
 
-    fixed_transport_cost = get_non_negative_float(
-        "Fixed transport cost (Tk.): "
-    )
-    transport_cost_per_person = get_non_negative_float(
-        "Transport cost per person (Tk.): "
+    transport_cost = calculate_transport_cost(
+        get_non_negative_float("Transport cost (Tk.): ")
     )
 
     nights = get_non_negative_integer("Number of nights: ")
@@ -108,12 +105,6 @@ def create_travel_option():
     budget = get_positive_float("Available budget (Tk.): ")
     comfort_rating = get_comfort_rating()
     travel_time = get_positive_float("Estimated travel time (hours): ")
-
-    transport_cost = calculate_transport_cost(
-        fixed_transport_cost,
-        transport_cost_per_person,
-        travellers,
-    )
 
     rooms_required, accommodation_cost = calculate_accommodation_cost(
         travellers,

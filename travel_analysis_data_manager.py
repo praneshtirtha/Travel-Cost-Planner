@@ -11,6 +11,8 @@ Responsibilities from the planning document:
 import csv
 import os
 
+from inputValidation_transport_manager import calculate_transport_cost
+
 CSV_FIELDS = [
     "option_name",
     "destination",
@@ -41,10 +43,14 @@ def calculate_cost_per_person(final_cost, travellers):
 
 def save_plan(option_data, filename):
     """Append one travel plan to the CSV file."""
-    file_exists = os.path.exists(filename)
-    file_is_empty = (not file_exists) or os.path.getsize(filename) == 0
-
     try:
+        option_data = dict(option_data)
+        option_data["transport_cost"] = calculate_transport_cost(
+            option_data["transport_cost"]
+        )
+        file_exists = os.path.exists(filename)
+        file_is_empty = (not file_exists) or os.path.getsize(filename) == 0
+
         with open(filename, "a", newline="", encoding="utf-8") as file:
             writer = csv.DictWriter(file, fieldnames=CSV_FIELDS)
             if file_is_empty:
@@ -52,7 +58,7 @@ def save_plan(option_data, filename):
             writer.writerow(option_data)
         print("Travel plan saved successfully.")
         return True
-    except OSError as error:
+    except (OSError, ValueError, KeyError, TypeError, csv.Error) as error:
         print(f"File error: the travel plan could not be saved ({error}).")
         return False
 
@@ -81,7 +87,7 @@ def load_plans(filename):
                         "destination": row["destination"],
                         "travellers": int(row["travellers"]),
                         "transport_type": row["transport_type"],
-                        "transport_cost": float(row["transport_cost"]),
+                        "transport_cost": calculate_transport_cost(row["transport_cost"]),
                         "nights": int(row["nights"]),
                         "rooms_required": int(row["rooms_required"]),
                         "accommodation_cost": float(row["accommodation_cost"]),
