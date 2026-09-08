@@ -1,6 +1,5 @@
 """Pranesh Majumder Tirtha
-Id: 2222899042
-Responsibilities from the planning document:
+Contributions:
 - Accommodation and room calculation
 - Food and activity cost calculation
 - Discount logic

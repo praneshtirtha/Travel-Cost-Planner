@@ -1,6 +1,5 @@
 """Ananto Shariar 
-ID: 2211431042
-Responsibilities from the planning document:
+Contributions:
 - Travel-option comparison
 - Cost-per-person calculation
 - Recommendation logic
