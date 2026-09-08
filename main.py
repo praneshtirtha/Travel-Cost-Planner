@@ -1,4 +1,4 @@
-"""Travel Cost Planner and Option Comparator"""
+"""This is shared contributed by all group members."""
 
 from travel_utils import (
     calculate_transport_cost,
