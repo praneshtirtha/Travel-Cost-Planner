@@ -1,6 +1,5 @@
 """Md. Nasim Taif 
-ID: 2212601042
-Responsibilities from the planning document:
+Contributions:
 - Main menu support
 - Travel-option input
 - Input validation

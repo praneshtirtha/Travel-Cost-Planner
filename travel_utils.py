@@ -5,7 +5,7 @@ main.py imports reusable functions from travel_utils.py, while the actual functi
 are separated by group-member responsibility for easier demonstration.
 """
 
-from inputValidation_transport_manager import (
+from input_validation_transport_manager import (
     calculate_transport_cost,
     get_non_empty_text,
     get_positive_integer,
