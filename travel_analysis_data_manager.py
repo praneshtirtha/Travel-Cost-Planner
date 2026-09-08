@@ -199,7 +199,7 @@ def compare_options(option_list):
                     reason = "Comfort is equal, so the lower-cost option was preferred."
                 else:
                     # Travel time is the final tie-breaker when cost and comfort are exactly equal.
-                    # are exactly equal.
+                
                     if option1["travel_time"] <= option2["travel_time"]:
                         recommended = option1
                     else:
