@@ -32,7 +32,7 @@ def calculate_food_cost(travellers, days, food_rate):
 
 
 
-# 3. ACTIVITY COST CALCULATION
+#  ACTIVITY COST CALCULATION
 
 def calculate_activity_cost(travellers, activity_rate):
     """Calculate total activity expense."""
